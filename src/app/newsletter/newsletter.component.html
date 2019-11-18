@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-12">
+        <form class="form-group" [formGroup]="newsletterFormGroup" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-10">
+                    <input type="text" class="form-control" formControlName="email">
+                </div>
+                <div class="col-2">
+                    <button
+                        type="submit"
+                        class="btn btn-success"
+                        [disabled]="!newsletterFormGroup.valid">OK</button>
+                </div>
+            </div>            
+        </form>
+    </div>
+</div>

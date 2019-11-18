@@ -9,17 +9,18 @@ import { NewsletterService } from './newsletter.service';
 })
 export class NewsletterComponent implements OnInit {
   newsletterFormGroup: FormGroup;
+  private emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
   constructor(private fb: FormBuilder, private newsletterService: NewsletterService) { }
 
   ngOnInit() {
     this.newsletterFormGroup = this.fb.group({
-      email: this.fb.control('', [Validators.required, Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)])
+      email: this.fb.control('', [Validators.required, Validators.pattern(this.emailPattern)])
     })
   }
 
   onSubmit() {
-    this.newsletterService.addNewsletter(this.newsletterFormGroup.value)
+    this.newsletterService.submit(this.newsletterFormGroup.value).subscribe(() => {console.log('wyslano')})
   }
 
 }

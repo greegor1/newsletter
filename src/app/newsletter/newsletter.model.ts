@@ -1,3 +1,6 @@
 export class Newsletter {
-    constructor(private email: string) {}
+    id: number;
+    constructor(private email: string) {
+        this.id = Math.floor(Math.random() * 100)
+    }
 }

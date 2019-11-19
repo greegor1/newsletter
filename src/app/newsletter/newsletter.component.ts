@@ -20,7 +20,8 @@ export class NewsletterComponent implements OnInit {
   }
 
   onSubmit() {
-    this.newsletterService.submit(this.newsletterFormGroup.value).subscribe(() => {console.log('wyslano')})
+    this.newsletterService.submit(this.newsletterFormGroup.value).subscribe(() => console.log('wyslano'))
+    this.newsletterFormGroup.reset();
   }
 
 }

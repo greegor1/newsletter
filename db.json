@@ -2,12 +2,6 @@
   "emails": [
     {
       "email": "default"
-    },
-    {
-      "email": {
-        "email": "asf@wp.pl"
-      },
-      "id": 62
     }
   ]
 }

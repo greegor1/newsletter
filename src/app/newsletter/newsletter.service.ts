@@ -8,10 +8,6 @@ export class NewsletterService {
 
     constructor(private nhs: NewsletterHttpService) {}
 
-    addNewsletter(email: Newsletter) {
-        this.newsletters.push(email)      
-    }
-
     submit(form) {
         const newsletter = new Newsletter(form);
         return this.nhs.submit(newsletter)
